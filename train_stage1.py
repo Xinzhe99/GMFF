@@ -29,7 +29,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="StackMFF V3 Training Script")
     parser.add_argument('--save_name', default='train_runs')
     parser.add_argument('--datasets_root', 
-                        default=r'/media/user/68fdd01e-c642-4deb-9661-23b76592afb1/xxz/datasets/stackmffv3_training_datasets',
+                        default='gmff_training_datasets',
                         type=str, help='Root path to all datasets')
 
     parser.add_argument('--train_datasets', nargs='+', 
@@ -47,7 +47,7 @@ def parse_args():
     # Training and model configuration
     parser.add_argument('--training_image_size', type=int, default=384,
                         help='Target image size for training')
-    parser.add_argument('--batch_size', type=int, default=8, 
+    parser.add_argument('--batch_size', type=int, default=12, 
                         help='Batch size for training and validation')
     parser.add_argument('--num_epochs', type=int, default=50, 
                         help='Number of training epochs')
@@ -400,4 +400,5 @@ def main():
     writer.close()
 
 if __name__ == "__main__":
+
     main()

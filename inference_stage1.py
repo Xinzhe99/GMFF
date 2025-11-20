@@ -53,11 +53,11 @@ def gray_to_colormap(img, cmap='rainbow'):
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Image Stack Fusion Inference Script")
-    parser.add_argument('--input_dir', type=str, default=r'/media/user/68fdd01e-c642-4deb-9661-23b76592afb1/xxz/datasets/coral_best_zoom_aligned',
+    parser.add_argument('--input_dir', type=str, default='/path/to/image/stack',
                        help='Directory containing input image stack')
     parser.add_argument('--output_dir', type=str, default='./results_stage1',
                        help='Directory for saving results')
-    parser.add_argument('--model_path', type=str, default=r'/media/user/68fdd01e-c642-4deb-9661-23b76592afb1/xxz/project_image_stack_fusion/StackMFFV4/train_runs/train_runs18/model_save/epoch_6.pth',
+    parser.add_argument('--model_path', type=str, default='weights/stackmffv4.pth',
                        help='Path to the trained model weights')
     parser.add_argument('--only_fused', action='store_true', default=True,
                        help='Save only the final color fused image with the same name as input folder')
@@ -259,4 +259,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()

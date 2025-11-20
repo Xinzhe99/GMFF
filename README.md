@@ -16,7 +16,7 @@
 ## 📢 News
 
 > [!NOTE]
-> 🎉 **2025.11**: The paper **Generative Multi-focus Image Fusion Network** has been submitted.
+> 🎉 **2025.11**: The paper has been submitted.
 
 ## Table of Contents
 

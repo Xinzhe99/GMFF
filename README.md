@@ -105,6 +105,8 @@ input_stack/
 └── 3.png
 ```
 
+Run the Stage 2 prediction script:
+
 ```bash
 python -u inference_stage2.py \
 --upscale 1 \
@@ -125,7 +127,7 @@ python -u inference_stage2.py \
 
 ### Preparation
 
-Download the benchmark results from the links provided in the [Downloads](#-downloads) section, and put them in the `evaluation` directory. To evaluate the performance of the proposed method, you can use the benchmark results provided in the [Downloads](#-downloads) section.
+Download the benchmark results from the links provided in the [Downloads](#-downloads) section, and put them in the [evaluation](https://github.com/Xinzhe99/GMFF/tree/main/evaluation) directory.
 
 ### Evaluation of Stage StackMFF V4
 
@@ -169,37 +171,57 @@ StackMFF V4 0.9938 38.8606
 
 To evaluate the performance of the GMFF model (Stage 2), you can use two different evaluation scripts depending on what you want to compare:
 
-1. For comparing different Stage 1 fusion methods followed by GMFF Stage 2, use [compare_stage1_diff_fusion_methods_stage2_gmff.py](evaluation/compare_stage1_diff_fusion_methods_stage2_gmff.py):
+1. For comparing different Stage 1 fusion methods followed by GMFF Stage 2, use [compare_stage1_diff_fusion_methods_stage2_gmff.py](https://github.com/Xinzhe99/GMFF/blob/main/evaluation/compare_stage1_diff_fusion_methods_stage2_gmff.py):
 
 Example usage:
 ```bash
 python evaluation/compare_stage1_diff_fusion_methods_stage2_gmff.py \
     --base_path /path/to/stage1_diff_fusion_methods_stage2_gmff \
-    --methods StackMFF-V4 OtherMethod1 OtherMethod2 \
-    --datasets Dataset1 Dataset2 \
+    --methods 'StackMFF V4' \
+    --datasets 'Mobile Depth' Middlebury \
     --metrics BRISQUE PIQE \
     --output_dir ./evaluation/outputs
 ```
 
-2. For comparing different restoration methods including GMFF, use [compare_stage1_stackmffv4_stage2_diff_restoration.py](evaluation/compare_stage1_stackmffv4_stage2_diff_restoration.py):
+Outputs should be:
+
+```plaintext
+Dataset: Mobile Depth
+----------------------------------------
+Method  BRISQUE    PIQE
+  GMFF   9.3538 27.6422
+
+Dataset: Middlebury
+----------------------------------------
+Method  BRISQUE    PIQE
+  GMFF  13.6831 29.1759
+```
+
+2. For comparing different restoration methods including GMFF, use [compare_stage1_stackmffv4_stage2_diff_restoration.py](https://github.com/Xinzhe99/GMFF/blob/main/evaluation/compare_stage1_stackmffv4_stage2_diff_restoration.py):
 
 Example usage:
 ```bash
 python evaluation/compare_stage1_stackmffv4_stage2_diff_restoration.py \
     --base_path /path/to/stage1_stackmffv4_stage2_diff_restoration \
-    --methods GMFF OtherMethod1 OtherMethod2 \
-    --datasets Dataset1 Dataset2 \
+    --methods GMFF \
+    --datasets 'Mobile Depth' Middlebury \
     --metrics BRISQUE PIQE \
     --output_dir ./evaluation/outputs
 ```
 
-Key features of these evaluation scripts:
-- Supports no-reference image quality assessment using BRISQUE and PIQE metrics
-- Works with various image formats (jpg, jpeg, png, gif, bmp, tiff)
-- Processes multiple datasets and methods
-- Generates detailed Excel reports with multi-level headers
-- Provides metric direction indicators (higher/lower is better)
-- Uses GPU acceleration when available for faster metric computation
+Outputs should be:
+
+```plaintext
+Dataset: Mobile Depth
+----------------------------------------
+Method  BRISQUE    PIQE
+  GMFF   9.3538 27.6422
+
+Dataset: Middlebury
+----------------------------------------
+Method  BRISQUE    PIQE
+  GMFF  13.6831 29.1759
+```
 
 ## 🏋️ Training
 

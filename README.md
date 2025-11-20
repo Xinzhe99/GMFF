@@ -86,7 +86,9 @@ python inference_stage1.py --input_dir ./input_stack --output_dir ./results_stag
 
 ### Stage 2: Generative restoration
 
-The pre-trained IFControlNet model weights file (`IFControlNet.pt`) should be placed in the `weights/` directory.
+The pre-trained model weights files should be placed in the `weights/` directory:
+- `IFControlNet.pt`: IFControlNet model weights
+- `v2-1_512-ema-pruned.ckpt`: Stable Diffusion v2.1 base model weights
 
 Using the Stage 1 fusion results as input, run the Stage 2 restoration script:
 

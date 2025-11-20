@@ -25,6 +25,7 @@
 - [Installation](#-installation)
 - [Downloads](#-downloads)
 - [Usage](#-usage)
+- [Evaluation](#-evaluation)
 - [Training](#-training)
 - [Citation](#-citation)
 
@@ -123,11 +124,11 @@ python -u inference_stage2.py \
 --device cuda --precision fp32
 ```
 
-## Evaluation
+## 📊 Evaluation
 
 ### Preparation
 
-Download the benchmark results from the links provided in the [Downloads](#-downloads) section, and put them in the [evaluation](https://github.com/Xinzhe99/GMFF/tree/main/evaluation) directory.
+Download the benchmark results from the links provided in the [Downloads](#-downloads) section, and put them in the [evaluation](./evaluation) directory.
 
 ### Evaluation of Stage StackMFF V4
 
@@ -178,7 +179,7 @@ Example usage:
 python evaluation/compare_stage1_diff_fusion_methods_stage2_gmff.py \
     --base_path /path/to/stage1_diff_fusion_methods_stage2_gmff \
     --methods 'StackMFF V4' \
-    --datasets 'Mobile Depth' Middlebury \
+    --datasets 'Mobile Depth' 'Middlebury' \
     --metrics BRISQUE PIQE \
     --output_dir ./evaluation/outputs
 ```
@@ -204,7 +205,7 @@ Example usage:
 python evaluation/compare_stage1_stackmffv4_stage2_diff_restoration.py \
     --base_path /path/to/stage1_stackmffv4_stage2_diff_restoration \
     --methods GMFF \
-    --datasets 'Mobile Depth' Middlebury \
+    --datasets 'Mobile Depth' 'Middlebury' \
     --metrics BRISQUE PIQE \
     --output_dir ./evaluation/outputs
 ```

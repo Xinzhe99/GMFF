@@ -1,0 +1,97 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 霓虹渐变 -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6ec7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a64dff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff3cff;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fff200;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffd60a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="highlightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#fff9d1;stop-opacity:0.7" />
+    </linearGradient>
+    
+    <filter id="modernGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+    
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="shadow"/>
+      <feOffset dx="0" dy="2" result="offset"/>
+      <feFlood flood-color="#000000" flood-opacity="0.1"/>
+      <feComposite in="offset" operator="in"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <pattern id="gridPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="none"/>
+      <path d="M 0 4 L 4 0" stroke="#ff6ec7" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- 背景 -->
+  <circle cx="20" cy="20" r="19" fill="url(#primaryGradient)" opacity="0.05"/>
+  <circle cx="20" cy="20" r="18" fill="url(#gridPattern)" opacity="0.1"/>
+  
+  <!-- 多层矩形叠加 -->
+  <g transform="translate(6, 8)">
+    <rect x="2" y="8" width="20" height="16" rx="3" fill="url(#primaryGradient)" opacity="0.3" 
+          transform="skewX(-10) translate(0, 2)"/>
+    <rect x="4" y="4" width="20" height="16" rx="3" fill="url(#primaryGradient)" opacity="0.6" 
+          transform="skewX(-5) translate(0, 1)"/>
+    <rect x="6" y="0" width="20" height="16" rx="3" fill="url(#primaryGradient)" opacity="0.9" 
+          filter="url(#softShadow)"/>
+    
+    <!-- 多焦点黄色光环 动态效果 -->
+    <g transform="translate(16, 8)">
+      <circle cx="0" cy="0" r="4" fill="url(#accentGradient)" opacity="0.8" filter="url(#modernGlow)">
+        <animate attributeName="r" values="3.5;4.5;3.5" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.9;0.6" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="2" fill="url(#highlightGradient)">
+        <animate attributeName="r" values="1.8;2.2;1.8" dur="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="1" fill="#ffffff"/>
+    </g>
+    
+    <g transform="translate(10, 12)">
+      <circle cx="0" cy="0" r="3" fill="url(#accentGradient)" opacity="0.6" filter="url(#modernGlow)">
+        <animate attributeName="r" values="2.5;3.5;2.5" dur="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.4;0.7;0.4" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="1.5" fill="url(#highlightGradient)">
+        <animate attributeName="r" values="1.2;1.8;1.2" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <g transform="translate(22, 4)">
+      <circle cx="0" cy="0" r="2.5" fill="url(#accentGradient)" opacity="0.5" filter="url(#modernGlow)">
+        <animate attributeName="r" values="2;3;2" dur="1.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0.6;0.3" dur="1.7s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="1" fill="url(#highlightGradient)">
+        <animate attributeName="r" values="0.8;1.2;0.8" dur="1.4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- 底部点缀 -->
+  <g transform="translate(4, 28)">
+    <circle cx="3" cy="3" r="2" fill="url(#primaryGradient)" opacity="0.6"/>
+    <circle cx="3" cy="3" r="1" fill="url(#highlightGradient)"/>
+  </g>
+</svg>

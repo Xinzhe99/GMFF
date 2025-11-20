@@ -189,12 +189,12 @@ Outputs should be:
 Dataset: Mobile Depth
 ----------------------------------------
 Method  BRISQUE    PIQE
-  GMFF   9.3538 27.6422
+  StackMFF V4   9.3538 27.6422
 
 Dataset: Middlebury
 ----------------------------------------
 Method  BRISQUE    PIQE
-  GMFF  13.6831 29.1759
+  StackMFF V4  13.6831 29.1759
 ```
 
 2. For comparing different restoration methods including GMFF, use [compare_stage1_stackmffv4_stage2_diff_restoration.py](https://github.com/Xinzhe99/GMFF/blob/main/evaluation/compare_stage1_stackmffv4_stage2_diff_restoration.py):
@@ -236,7 +236,7 @@ First, prepare the StackMFF V4 training dataset, the details of which can be fou
 The training dataset should be organized in the following structure:
 
 ```
-stackmff_datasets/
+gmff_datasets/
 ├── NYU-V2/
 │   ├── TR/ (Training set)
 │   │   ├── focus_stack/ (image stacks)

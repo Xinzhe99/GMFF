@@ -1,6 +1,6 @@
 <div align="center">
 
-# <img src="assets/gmff_logo.svg" alt="GMFF" height="500" style="vertical-align: middle;"/> GMFF
+# <img src="assets/gmff_logo.svg" alt="GMFF" height="800" style="vertical-align: middle;"/> GMFF
 
 **Generative Multi-focus Image Fusion Network**
 

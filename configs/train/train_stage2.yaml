@@ -85,13 +85,6 @@ dataset:
         target: gmff.dataset.file_backend.HardDiskBackend
       out_size: 512
       crop_type: center
-      # blur_kernel_size: 41  # 未使用参数
-      # kernel_list: ['iso', 'aniso']  # 未使用参数
-      # kernel_prob: [0.5, 0.5]  # 未使用参数
-      # blur_sigma: [0.1, 12]  # 未使用参数
-      # downsample_range: [1, 12]  # 未使用参数
-      # noise_range: [0, 15]  # 未使用参数
-      # jpeg_range: [30, 100]  # 未使用参数
    
 batch_transform:
   target: gmff.dataset.batch_transform.IdentityBatchTransform
@@ -100,16 +93,10 @@ train:
   # pretrained sd v2.1 path
   sd_path: "weights/v2-1_512-ema-pruned.ckpt"
   # experiment directory path
-  exp_dir: "./experiments/train_gmff_stage2_2"
-  # stage 1 swinir path.
-  # # In our paper, we use SwinIR trained on ImageNet-1k with codeformer degradation.
-  # swinir_path: "/media/user/68fdd01e-c642-4deb-9661-23b76592afb1/xxz/project_image_stack_fusion/GMFF/weights/codeformer_swinir.ckpt"
+  exp_dir: "./experiments/train_gmff_stage2_1"
+
   # # batch size = 8, lr = 3e-6 (first 30k),3e-7 (next 50k)
   learning_rate: 3e-6
-  # ImageNet 1k (1.3M images)
-  # batch size = 192, lr = 1e-4, total training steps = 25k
-  # DiffBiR filtered laion2b-en (15M images)
-  # batch size = 256, lr = 1e-4 (first 30k), 1e-5 (next 50k), total training steps = 80k
   batch_size: 8
   num_workers: 8
   train_steps: 30000
@@ -117,5 +104,5 @@ train:
   ckpt_every: 10000
   image_every: 1000
   # Pretrained IRControlNet path
-  resume: "/media/user/68fdd01e-c642-4deb-9661-23b76592afb1/xxz/project_image_stack_fusion/GMFF/experiments/train_gmff_stage2/checkpoints/0030000.pt"
+  resume: "weights/IRControlNet.pth"
   noise_aug_timestep: 0

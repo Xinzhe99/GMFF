@@ -31,7 +31,7 @@
 ## 📖 Overview
 
 <div align="center">
-<img src="assets/gmff_framework.jpg" width="800px"/>
+<img src="assets/framework.jpg" width="800px"/>
 </div>
 
 ## ✨ Highlights

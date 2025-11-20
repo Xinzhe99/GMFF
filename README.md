@@ -59,7 +59,7 @@ pip install -r requirements.txt
 | Resource | Link | Code | Description |
 |----------|------|------|-------------|
 | 🗂️ **Test Datasets** | [![Download](https://img.shields.io/badge/Download-4CAF50?style=flat-square)](https://pan.baidu.com/s/1XrKGlqSK6kc_R-1AzprHlA?pwd=cite) | `cite` | Complete test datasets |
-| 📊 **Benchmark Results** | [![Download](https://img.shields.io/badge/Download-FF9800?style=flat-square)](https://pan.baidu.com/s/1ozaG9P6D3PBv-liu1FRNuQ) | `cite` | Fusion results from all methods |
+| 📊 **Benchmark Results** | [![Download](https://img.shields.io/badge/Download-FF9800?style=flat-square)](https://pan.baidu.com/s/1DMQdAB6AIkjq07Htw4MxfA) | `cite` | Fusion results from all methods |
 | 🔧 **Pre-trained Models** | [![Download](https://img.shields.io/badge/Download-2196F3?style=flat-square)](https://pan.baidu.com/s/19KNHIfqrV054C-T623P9LA) | `cite` | Pre-trained models |
 
 ## 💻 Usage
@@ -130,7 +130,7 @@ Example usage:
 ```bash
 python evaluation/compare_diff_fusion_methods.py \
     --base_path evaluation/diff_fusion_methods_results \
-    --ground_truth_path evaluation/diff_fusion_methods_results/Ground Truth \
+    --ground_truth_path "evaluation/diff_fusion_methods_results/Ground Truth" \
     --methods 'StackMFF V4' \
     --datasets 'Mobile Depth' Middlebury FlyingThings3D Road-MF \
     --output_dir ./evaluation_outputs
@@ -169,7 +169,7 @@ To evaluate the performance of the GMFF model (Stage 2), you can use two differe
 Example usage:
 ```bash
 python evaluation/compare_stage1_diff_fusion_methods_stage2_gmff.py \
-    --base_path /path/to/stage1_diff_fusion_methods_stage2_gmff \
+    --base_path "evaluation/stage1_diff_fusion_methods_stage2_gmff" \
     --methods 'StackMFF V4' \
     --datasets 'Mobile Depth' 'Middlebury' \
     --metrics BRISQUE PIQE \
@@ -195,7 +195,7 @@ Method  BRISQUE    PIQE
 Example usage:
 ```bash
 python evaluation/compare_stage1_stackmffv4_stage2_diff_restoration.py \
-    --base_path /path/to/stage1_stackmffv4_stage2_diff_restoration \
+    --base_path "evaluation/stage1_stackmffv4_stage2_diff_restoration" \
     --methods GMFF \
     --datasets 'Mobile Depth' 'Middlebury' \
     --metrics BRISQUE PIQE \

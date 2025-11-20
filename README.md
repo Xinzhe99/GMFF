@@ -21,7 +21,6 @@
 ## Table of Contents
 
 - [Overview](#-overview)
-- [Highlights](#-highlights)
 - [Installation](#-installation)
 - [Downloads](#-downloads)
 - [Usage](#-usage)
@@ -35,13 +34,6 @@
 <img src="assets/framework.jpg" width="800px"/>
 </div>
 
-## ✨ Highlights
-
-- Presents the first generative multi-focus image fusion network based on diffusion models.
-- Combines the strengths of stack-based fusion and generative modeling for enhanced results.
-- Employs a two-stage pipeline: stack fusion followed by diffusion-based refinement.
-- Leverages pre-trained stable diffusion models for high-quality image generation.
-- Provides an open-source solution that outperforms existing methods with superior visual quality.
 
 ## 🚀 Installation
 
@@ -68,7 +60,7 @@ pip install -r requirements.txt
 |----------|------|------|-------------|
 | 🗂️ **Test Datasets** | [![Download](https://img.shields.io/badge/Download-4CAF50?style=flat-square)](https://pan.baidu.com/s/1XrKGlqSK6kc_R-1AzprHlA?pwd=cite) | `cite` | Complete test datasets |
 | 📊 **Benchmark Results** | [![Download](https://img.shields.io/badge/Download-FF9800?style=flat-square)](https://pan.baidu.com/s/1ozaG9P6D3PBv-liu1FRNuQ) | `cite` | Fusion results from all methods |
-| 🔧 **Pre-trained Models** | [![Download](https://img.shields.io/badge/Download-2196F3?style=flat-square)](https://pan.baidu.com/s/1example) | `gmff` | Pre-trained GMFF models |
+| 🔧 **Pre-trained Models** | [![Download](https://img.shields.io/badge/Download-2196F3?style=flat-square)](https://pan.baidu.com/s/19KNHIfqrV054C-T623P9LA) | `cite` | Pre-trained models |
 
 ## 💻 Usage
 

@@ -4,6 +4,7 @@
 
 **Generative Multi-focus Image Fusion Network**
 
+[![arXiv](https://img.shields.io/badge/arXiv-2512.21495-red.svg)](https://arxiv.org/abs/2512.21495)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.2+-red.svg)](https://pytorch.org/)

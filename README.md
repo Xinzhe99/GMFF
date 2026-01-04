@@ -16,6 +16,8 @@
 ## 📢 News
 
 > [!NOTE]
+> 🎉 **2026.01**: This work has been included in [StackMFF-Series](https://github.com/Xinzhe99/StackMFF-Series)
+
 > 🎉 **2025.11**: The paper has been submitted.
 
 ## Table of Contents
